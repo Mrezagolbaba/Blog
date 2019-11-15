@@ -6,7 +6,7 @@
         font-weight: 500;
         color:#fff;
         align-Items:center;
-        grid-column-start:2
+        grid-column-start:2;
         & p{
             padding:10px 10px;
             
