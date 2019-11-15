@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import styled from 'styled-components'
-import Wrapper from "../StyledCoponent/Wrapper";
-import {MenuItem, Button, TitleHeader} from "../StyledCoponent/MenuItem";
-import Container from "../StyledCoponent/Container";
+import Wrapper from "../StyledCoponent/styledHeader/Wrapper";
+import {MenuItem, Button, TitleHeader} from "../StyledCoponent/styledHeader/MenuItem";
+import ContainerHeader from "../StyledCoponent/styledHeader/ContainerHeader";
 const ItemStyle=styled.p({
 });
 
@@ -12,7 +12,7 @@ const ItemStyle=styled.p({
 export default class Header extends Component{
     render(){
         return (
-            <Container>
+            <ContainerHeader>
                  <Wrapper>
                      <MenuItem>
                     <ItemStyle>Home</ItemStyle>
@@ -25,7 +25,7 @@ export default class Header extends Component{
                 </MenuItem>
                  </Wrapper>
                 <TitleHeader>Our Blog</TitleHeader>
-            </Container>
+            </ContainerHeader>
         );
     }
 
