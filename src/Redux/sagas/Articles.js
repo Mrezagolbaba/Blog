@@ -1,5 +1,5 @@
 
-import {takeLatest} from 'redux-saga/effects';
+import {takeLatest,takeEvery} from 'redux-saga/effects';
 import {
     put,
     call
@@ -29,7 +29,7 @@ function* getArticle () {
     }
 }
 function* watchGetArticle () {
-    yield takeLatest(GET_ARTICLE, getArticle);
+    yield takeEvery(GET_ARTICLE, getArticle);
 }
 
 export {

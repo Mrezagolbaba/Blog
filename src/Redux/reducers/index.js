@@ -1,9 +1,10 @@
 // We import the combineReducers function
-import { combineReducers } from 'redux-immutable';
+import { combineReducers } from 'redux';
 // Import our reducers function from here
 import articleReducer from './articles';
 
 // combineReducers merges them all!
-export default combineReducers({
+const AllReducer= combineReducers({
     articleReducer
 });
+export default AllReducer

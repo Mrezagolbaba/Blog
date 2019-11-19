@@ -4,14 +4,12 @@ import {
 } from '../constants';
 const initialState = [];
 
-const articleReducer = (state = initialState, action) => {
+const articleReducer = (state = initialState, action={}) => {
     switch (action.type) {
-        case GET_ARTICLE_SUCCESS: {
-            return  action.receiveArticle
-        }
-        case GET_ARTICLE_FAILURE: {
+        case GET_ARTICLE_SUCCESS:
+            return action.receiveArticle;
+        case GET_ARTICLE_FAILURE:
             return [];
-        }
         default:
             return state;
 
