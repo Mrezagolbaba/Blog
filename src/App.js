@@ -5,20 +5,27 @@ import {
     Switch,
 } from 'react-router-dom';
 import configureStore from '../src/Redux/store/store';
-import MainBlog from "./blog/Blog";
-import SingleBlog from "./blog/blogSingle";
+import BlogComponent from "./Components/Screens/Blog";
+import SingleBlog from "./Components/Screens/blogSingle";
+
 
 
 
 
 class App extends Component {
   render() {
-      const store = configureStore();
+    const store = configureStore();
     return (
         <Provider store={store}>
             <Switch>
-                <Route exact path="/" component={MainBlog}/>
-                <Route path="/singleArticle" component={SingleBlog}/>
+                <Route
+                    exact
+                    path="/"
+                    component={BlogComponent}
+                />
+                <Route exact
+                       path="/singleArticle"
+                       component={SingleBlog}/>
             </Switch>
         </Provider>
     );
