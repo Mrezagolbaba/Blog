@@ -2,22 +2,29 @@ import React,{Component} from 'react';
 import Header from "./Header";
 import ContentBlog from "./ContentBlog";
 import Footer from "./Footer";
-import * as Immutable from 'immutable';
 import { connect } from 'react-redux';
-
-import {getArticles} from '../Redux/actions';
-import articleReducers from "../Redux/reducers/articles";
+import Loader from 'react-loader-spinner'
+import {getArticles} from '../../Redux/actions';
 
  class MainBlog extends Component{
 
-    componentDidMount () {
-        this.props.articlesActions()
-
+    componentDidMount(){
+     this.props.articlesActions()
     }
 
 
 
     render(){
+        if(!this.props.articles){
+           return (
+               <Loader
+                   type="Puff"
+                   color="#00BFFF"
+                   height={100}
+                   width={100}
+               />
+           )
+        }else {
             return (
                 <div>
                     <Header/>
@@ -27,22 +34,24 @@ import articleReducers from "../Redux/reducers/articles";
             );
         }
 
+        }
+
 
 }
-function mapStateToProps (state) {
-     console.log(state);
+const mapStateToProps= (state)=> {
     return {
         articles:state.articleReducer
     }
-}
+};
 // We can dispatch actions to the reducer and sagas
-function mapDispatchToProps (dispatch) {
+const mapDispatchToProps= (dispatch)=> {
     return {
         articlesActions:()=>{
             dispatch(getArticles())
         }
     };
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainBlog);
+const BlogComponent= connect(mapStateToProps, mapDispatchToProps)(MainBlog);
+ export default BlogComponent
 
