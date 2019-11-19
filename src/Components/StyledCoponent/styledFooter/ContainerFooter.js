@@ -4,6 +4,7 @@ import {device} from "../Responsive/device";
 const  ContainerFooter= styled.div`
     width:100%;
     height: 740px;
+    min-width: 1280px;
     display: grid;
     margin-top: 165px;
     grid-template-columns: 40% auto 40%; 
@@ -18,6 +19,7 @@ const HolderTitleFooter=styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 `;
 const TitleFootr=styled.p`
     font-size: 36px;
@@ -39,19 +41,50 @@ const SubscribeInput=styled.input`
     background-color: #ffffff;
     margin-top: 76px;
     outline: none;
-    &::before{
+     font-size: 16px;
+    color: #ececec;
+    font-family: "Montserrat";
+    font-weight: 400;
+    padding: 0 10px;
+    
+`;
+const ButtonStyled=styled.div`
     width: 190px;
     height: 60px;
     border-radius: 30px;
     background-color: #3b2eb2;
+    position: absolute;
+    z-index: 5;
+    margin-top: 20%;
+    right: 11%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media ${device.laptop} {
+      width: 30%; 
     } 
+    @media ${device.laptopL} {
+       margin-top: 13%;
+    }
+     @media ${device.desktop} {
+      margin-top: 13%;
+    }
+    
 `;
-
+const TitleButton=styled.p`
+    font-size: 16px;
+    color: #ffffff;
+    font-family: "Montserrat";
+    font-weight: 400;
+    
+`
 
 export {
     ContainerFooter,
     HolderTitleFooter,
     TitleFootr,
     SubTitleFooter,
-    SubscribeInput
+    SubscribeInput,
+    ButtonStyled,
+    TitleButton
 }

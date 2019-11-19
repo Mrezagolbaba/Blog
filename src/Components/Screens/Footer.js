@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
 import {
+    ButtonStyled,
     ContainerFooter,
     HolderTitleFooter, SubscribeInput,
-    SubTitleFooter,
+    SubTitleFooter, TitleButton,
     TitleFootr
 } from "../StyledCoponent/styledFooter/ContainerFooter";
 
@@ -17,7 +18,12 @@ export default class Footer extends Component{
                   <SubTitleFooter>
                       Donec tempor finibus ante ac luctus. Fusce facilisis nisi vel o
                   </SubTitleFooter>
-                  <SubscribeInput/>
+                  <SubscribeInput placeholder='Enter Email Address'/>
+                  <ButtonStyled>
+                      <TitleButton>
+                        Subscribe
+                      </TitleButton>
+                  </ButtonStyled>
               </HolderTitleFooter>
           </ContainerFooter>
         );

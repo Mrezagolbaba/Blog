@@ -54,10 +54,10 @@ const TitleLatestPostsItems=styled.p`
     font-family: "Montserrat";
     font-weight: 500;
 `;
-const LatestPostsItemsHolder=styled.p`
+const LatestPostsItemsHolder=styled.div`
    display: flex;
    //width: 330px;
-   //height: 73px;
+   height: 72px;
 `;
 const LatestPostsItemsName=styled.p`
     font-size: 16px;
@@ -78,12 +78,12 @@ const LatestPostsItemsDate=styled.p`
     margin-bottom: 0px;!important;
     margin-left: 10px;
 `;
-const LatestPostsTextHolder=styled.p`
+const LatestPostsTextHolder=styled.div`
    
 `;
 const LatestPostsItemsImage=styled.img`
-    width: 72px;!important;
-    height: 72px;!important;
+    width: 120px;!important;
+    height: 90%;
     background-color: #e9eef2;
 `;
 

@@ -4,11 +4,10 @@ import {device} from "../Responsive/device";
 const  ContainerContent= styled.div`
     width:100%;
     display: grid;
-    grid-template-columns: 20% auto 20%; 
+    min-width: 1280px;
+    grid-template-columns: 10% auto 10%;  
     background: #fff;
-     @media ${device.laptop} { 
-      grid-template-columns: 10% auto 10%;  
-    }
+   
 `;
 const ContentHolder=styled.div`
   grid-column-start:2;
@@ -16,22 +15,35 @@ const ContentHolder=styled.div`
     grid-template-columns: 2fr  1fr ;
 `;
 const CardHolderStyled=styled.div`
-       display:flex;
+       display:grid;
+       grid-template-columns: 1fr 1fr;
        grid-column-start:1;
+       grid-column-end: 1;
        margin-top: 150px;
+       grid-column-gap: 100px;
 `;
 const CardItemStyled=styled.div`
     grid-column-start:1;
     width: 360px;
+    min-width: 260px;
+    min-height: 400px;
     height: 513px;
     border-radius: 10px;
     filter: drop-shadow(0px 25px 27.5px rgba(0,0,0,0.1));
     background-color: #ffffff;
     margin-right: 45px;
     margin-bottom: 80px;
+     display: inline-block;
      @media ${device.laptop} { 
          width: 260px;
           height: 400px;
+    } 
+    @media ${device.laptopL} { 
+          width: 360px;
+          height: 513px;
+    }@media ${device.desktop} { 
+          width: 360px;
+          height: 513px;
     }
 `;
 const ImageCardStyled=styled.div`
@@ -42,6 +54,11 @@ const ImageCardStyled=styled.div`
     background-color: #e1e1e1;
      @media ${device.laptop} { 
         height : 200px;
+    }
+    @media ${device.laptopL} { 
+          height: 50%;
+    }@media ${device.desktop} { 
+          height:50%;
     }
 `;
 const TitleHolderCardStyled=styled.div`
@@ -69,16 +86,23 @@ const AuthorCardStyled=styled.div`
 const DescriptionHolderCardStyled=styled.div`
     display:flex;
     align-items:center;
+     @media ${device.laptopL} { 
+          margin-top:10px
+    }@media ${device.desktop} { 
+         margin-top:10px
+
+    }
   
 `;
 const DescriptionCardStyled=styled.p`
      width: 300px;
-    height: 72px;
+    height: 100px;
     font-size: 16px;
     color: #4e5c66;
     font-family: "Montserrat";
     font-weight: 400;
-     padding:0 30px
+     padding:0 30px;
+     overflow: hidden;
 `;
 
 

@@ -1,4 +1,5 @@
     import styled from 'styled-components';
+    import {device} from "../Responsive/device";
 
     const MenuItem= styled.div`
         display: flex;
@@ -22,6 +23,7 @@
        align-items: center;
       justify-content: center;
       display:flex;
+      outline: none;
         & p {
         font-size: 18px;
         color: #ffffff;
@@ -29,6 +31,10 @@
         font-weight: 500;
         padding:0;
         }
+      @media ${device.laptop} {
+         width: 175px;
+         height: 50px;
+    }
     `;
     const TitleHeader=styled.div`
        align-items: center;
