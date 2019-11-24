@@ -5,8 +5,8 @@ import {
     Switch,
 } from 'react-router-dom';
 import configureStore from '../src/Redux/store/store';
-import BlogComponent from "./Components/Screens/Blog";
-import SingleBlog from "./Components/Screens/blogSingle";
+import BlogComponent from "./Components/Screens/Blog/Blog";
+import SingleBlog from "./Components/Screens/SingleBlog/blogSingle";
 
 
 
