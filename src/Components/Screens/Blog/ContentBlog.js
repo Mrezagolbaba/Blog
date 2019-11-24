@@ -18,22 +18,21 @@ class ContentBlogs extends Component{
         }
     }
     SetSlugItems(Items){
-        console.log('Items.slug',Items.slug)
        this.props.onFetchArticle(Items.slug)
     }
 
 //in render first we check props and then we map this for show all items
     render(){
-        console.log('this.props.articles.articles',this.props.articles.articles)
         const {classes} =this.props;
         return (
                 <div className={classes.ContainerContent} >
                     <div className={classes.ContentHolder}>
                         <div className={classes.CardHolderStyled}>
                             {this.props.articles.articles&&this.props.articles.articles.map((Items,index)=>{
+                                const backUrl = '/singleArticle/';
                                 return(
-                                    <Link  to={{ pathname: '/singleArticle', state: { index: index} }}  >
-                                        <div className={classes.CardItemStyled} onClick={()=>this.SetSlugItems(Items)}>
+                                    <Link  to={{ pathname:backUrl+`${Items.slug}`,state: { index: index}}} key={index}  >
+                                        <div className={classes.CardItemStyled} onClick={()=>this.SetSlugItems(Items)} key={index}>
                                             <div className={classes.ImageCardStyled}/>
                                             <div className={classes.TitleHolderCardStyled}>
                                                 <p className={classes.TitleCardItemStyled}>
