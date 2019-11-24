@@ -1,10 +1,8 @@
 //this file contain some code for footer.
-// imported style file from
-// ```../../StyledCoponent/styledFooter/ContainerFooter```
+// imported style file from ```../../StyledCoponent/styledFooter/ContainerFooter```
 import React,{Component} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from "../../StyledCoponent/styledFooter/ContainerFooter";
-import {Input} from "semantic-ui-react";
 import {Button} from "@material-ui/core";
 
 class Footer extends Component{
