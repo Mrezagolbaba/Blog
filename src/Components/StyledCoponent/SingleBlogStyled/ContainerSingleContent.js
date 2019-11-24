@@ -1,163 +1,170 @@
-import styled from "styled-components";
-import {device} from "../Responsive/device";
 
-const  ContainerSingleContent= styled.div`
-    width:100%;
-    display: grid;
-    grid-template-columns: 20% auto 20%; 
-    background: #fff;
-     @media ${device.laptop} { 
-      grid-template-columns: 10% auto 10%;  
-    }
-`;
-const ContentHolder=styled.div`
-  grid-column-start:2;
-    display: grid;
-    grid-template-columns: 2fr  1fr ;
-`;
-const ArticleHolder=styled.div`
-  grid-column-start:1;
-  margin-top: 150px;
+export default (theme)=>({
+    ContainerSingleContent:({
+        width:'100%',
+        display: 'grid',
+        gridTemplateColumns:' 20% auto 20%',
+        background: '#fff',
+        [theme.breakpoints.down('lg')]: {
+            gridTemplateColumns:' 10% auto 10%',
 
-`;
-const TitleArticleHolder=styled.div`
-  display: flex;
-  flex-direction: column;
-   margin-bottom: 50px;
-  //align-items: center;
-`;
-const TitleArticle=styled.p`
-    font-size: 36px;
-    color: #2a2a2a;
-    font-family: "sans-serif";
-    font-weight: bold; 
-    margin:0px;
-`;
-const DateTimeArticle=styled.p`
-    font-size: 14px;
-    color: #94a1ac;
-    font-family: "sans-serif";
-    font-weight: 400;
-   
-`;
-const ImageArticle=styled.img`
-    width: 90%;
-    height: 400px;
-    background-color: #000000;
-`;
-const DescriptionArticle=styled.div`
-    width: 90%;
-    margin-top: 49px;
-    
-`;
-const HolderUnderArticle=styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 25px;
-`;
-const CommentArticle=styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-top: 25px;
-`;
-const SocialHolder=styled.div`
-  display: flex;
-  align-items: center;
-  grid-column-start: 1;
-`;
-const ImageSocial=styled.img`
-  width: 25px;
-  height: 25px;
-  //background-color: #09d3ac;
-  
-`
-const TagsHolder=styled.div`
-  display: flex;
-    align-items: center;
-  grid-column-start: 2;
-  p:first-child {
-  margin: 0;
-  }
-`;
-const TagTitle=styled.p`
-  font-family: sans-serif;
-  font-size: 14px;
-`;
-const TagsName=styled.p`
-  font-size: 12px;
-  font-family: sans-serif;
-  padding: 0 10px;
-`;
-const TagNameHolder=styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ececec;
-  height: 20px;
-  margin-left: 15px;
-`;
-const AuthorHolder=styled.div`
-  display: flex;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  margin-top: 20px;
-`;
-const ImageHolder=styled.div`
-display: flex;
-align-items: center;
-`;
-const AuthorNameHolder=styled.div`
-  width: 100%;
-  height: 100px;
-  margin-left: 20px;
-`;
-const AuthorImage=styled.img`
-    width: 180px;
-    height: 180px;
-    background-color: #ececec;
-     @media ${device.laptop} { 
-        width: 100px;
-       height: 100px;
-     
-    }
-`;
-const AuthorName=styled.p`
-  margin: 0px;
-  
-`;
-const AuthorJob=styled.p`
-    margin: 0px;
-    color: #ababab;
+        },
+    }),
+    ContentHolder:({
+        gridColumnStart:2,
+        display: 'grid',
+        gridTemplateColumns:' 2fr  1fr' ,
+    }),
+    ArticleHolder:({
+        gridColumnStart:1,
+        marginTop: '150px',
+    }),
+    TitleArticleHolder:({
+        display: 'flex',
+        flexDirection: 'column',
+        marginBottom: '50px',
+    }),
+    TitleArticle:({
+        fontSize: '36px',
+        color: '#2a2a2a',
+        fontFamily: "sans-serif",
+        fontWeight:' bold',
+        margin:'0px',
+    }),
+    DateTimeArticle:({
+        fontSize: '14px',
+        color: '#94a1ac',
+        fontFamily: "sans-serif",
+        fontWeight: '400',
+    }),
+    ImageArticle:({
+        width: '90%',
+        height: '400px',
+        backgroundColor: '#ececec'
+    }),
+    DescriptionArticle:({
+        width: '90%',
+        marginTop: '49px'
+    }),
+    HolderUnderArticle:({
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        marginTop: '25px',
+    }),
+    CommentArticle:({
+        display: 'grid',
+        gridTemplateColumns:' 1fr',
+        marginTop: '25px',
+    }),
+    SocialHolder:({
+        display: 'flex',
+        alignItems: 'center',
+        gridColumnStart: 1,
+    }),
+    ImageSocial:({
+        width: '25px',
+        height: '25px',
+    }),
+    TagsHolder:({
+        display: 'flex',
+        alignItems: 'center',
+        gridColumnStart: 2,
+        // p:'first-child': {
+        //     margin: '0',
+        // } ,
+    }),
+    TagTitle:({
+        fontFamily: 'sans-serif',
+        fontSize: '14px',
+    }),
+    TagsName:({
+        fontSize: '12px',
+        fontFamily: 'sans-serif',
+        padding: '0 10px',
+    }),
+    TagNameHolder:({
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        border: '1px solid #ececec',
+        height: '20px',
+        marginLeft: '15px',
+    }),
+    AuthorHolder:({
+        display: 'flex',
+        gridColumnStart: 1,
+        gridColumnEnd: 3,
+        marginTop: '20px'
+    }),
+    ImageHolder:({
+        display: 'flex',
+        alignItems: 'center'
+    }),
+    AuthorNameHolder:({
+        width: '100%',
+        height: '100px',
+        marginLeft: '20px',
+    }),
+    AuthorImage:({
+        width: '180px',
+        height: '180px',
+        backgroundColor: '#ececec',
+        [theme.breakpoints.down('lg')]: {
+            width: '100px',
+            height: '100px',
+        },
+    }),
+    AuthorName:({
+        margin: '0px'
+    }),
+    AuthorJob:({
+        margin: '0px',
+        color: '#ababab',
+    }),
+    AuthorDescription:({
+        fontSize: '12px'
+    }),
+    CommentInputs:({
+        display:'flex',
+        alignItems:'center',
+        justifyContent: 'center',
+        marginTop:'50px',
+     }),
+    InputCommentLeft:({
+        width:'300px',
+        right: '3%'
+     }),
+    InputComment:({
+        marginLeft:'6px',
+        width:'300px',
+     }),
+    CommentTextArea:({
+        display:'flex',
+        alignItems:'center',
+        justifyContent: 'center',
+        marginTop:'50px',
+        width:'640px',
+        height:'150px',
+        borderRadius:'10px',
+        border:'1px solid #ececec',
+        padding: '10px 10px'
+       }),
+    SubmitButton:({
+        width: '140px',
+        height: '52px',
+        borderRadius: '26px',
+        backgroundColor: '#3b2eb2',
+        marginTop:'10px',
 
-`;
-const AuthorDescription=styled.p`
-font-size: 12px;
- 
-`;
+    }),
+    ButtonText:({
+         fontSize: '14px',
+        color: '#ffffff',
+        fontFamily: "Montserrat",
+        fontWeight: '600',
+        textAlign: 'center',
+    })
+});
 
 
-export {
-    ContainerSingleContent ,
-    ContentHolder,
-    ArticleHolder,
-    TitleArticleHolder,
-    TitleArticle,
-    DateTimeArticle,
-    ImageArticle,
-    DescriptionArticle,
-    HolderUnderArticle,
-    SocialHolder,
-    TagsHolder,
-    ImageSocial,
-    TagTitle,
-    TagsName,
-    TagNameHolder,
-    AuthorHolder,
-    ImageHolder,
-    AuthorNameHolder,
-    AuthorImage,
-    AuthorDescription,
-    AuthorJob,
-    AuthorName,
-    CommentArticle
-}
+
