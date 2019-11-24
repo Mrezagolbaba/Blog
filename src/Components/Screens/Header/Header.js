@@ -27,7 +27,7 @@ class Header extends Component{
                         </button>
                     </div>
                     <div className={classes.LogoHolder} >
-                        <img className={classes.LogoImage} src={logo}/>
+                        <img className={classes.LogoImage} src={logo} alt={'logo'}/>
                     </div>
                 </div>
                 <div className={classes.TitleHeader}>Our Blog</div>
