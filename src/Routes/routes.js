@@ -6,8 +6,8 @@ import configureStore from '../Redux/store/store';
 import { Router, Route } from 'react-router';
 import { createHashHistory } from 'history';
 // import { AddGameContainer, GamesContainer } from './containers';
-import  MainBlog from '../Components/Screens/Blog';
-import  SingleBlog  from '../Components/Screens/blogSingle';
+import  MainBlog from '../Components/Screens/Blog/Blog';
+import  SingleBlog  from '../Components/Screens/SingleBlog/blogSingle';
 const store = configureStore();
 
 
