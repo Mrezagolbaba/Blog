@@ -1,7 +1,8 @@
 // Import the watcher we have just created
 import {
-    watchGetArticle
-} from './Articles';
+    watchGetArticle,
+
+} from './ArticlesSaga';
 import {call} from 'redux-saga/effects'
 
 export default function* rootSaga () {
