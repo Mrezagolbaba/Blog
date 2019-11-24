@@ -1,12 +1,10 @@
 
 import React,{Component} from 'react';
-import {Input} from "semantic-ui-react";
 import 'semantic-ui-css/semantic.min.css'
 import styles from "../../StyledCoponent/StyledSideBar/ContainerSideBar";
 import { withStyles } from '@material-ui/core/styles';
 import {fetchArticleAction} from "../../../Redux/actions";
 import {connect} from "react-redux";
-import {TitleCardItemStyled} from "../../StyledCoponent/BlogStyled/ContainerContent";
 import moment from "moment";
 
 
@@ -29,7 +27,7 @@ class SideBarComponent extends Component{
                     <p className={classes.TitleLatestPostsItems}>Latest Posts</p>
                     {this.props.articles.articles&&this.props.articles.articles.map((Items,index)=>{
                         return(
-                            <div className={classes.LatestPostsItemsHolder}>
+                            <div className={classes.LatestPostsItemsHolder} key={index}>
                                 <div className={classes.LatestPostsItemsImage}/>
                                 <div className={classes.LatestPostsTextHolder} >
                                     <p className={classes.LatestPostsItemsName}>{Items.title}</p>
