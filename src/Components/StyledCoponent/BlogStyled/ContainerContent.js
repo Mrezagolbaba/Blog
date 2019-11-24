@@ -1,6 +1,3 @@
-import styled from 'styled-components';
-import {device} from "../Responsive/device";
-import Montserrat from '../../../assets/montserrat 2/Montserrat-Bold.otf'
 
 export default (theme)=>({
     ContainerContent:{
