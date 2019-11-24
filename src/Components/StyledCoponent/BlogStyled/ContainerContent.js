@@ -1,124 +1,116 @@
 import styled from 'styled-components';
 import {device} from "../Responsive/device";
+import Montserrat from '../../../assets/montserrat 2/Montserrat-Bold.otf'
 
-const  ContainerContent= styled.div`
-    width:100%;
-    display: grid;
-    min-width: 1280px;
-    grid-template-columns: 10% auto 10%;  
-    background: #fff;
-   
-`;
-const ContentHolder=styled.div`
-  grid-column-start:2;
-    display: grid;
-    grid-template-columns: 2fr  1fr ;
-`;
-const CardHolderStyled=styled.div`
-       display:grid;
-       grid-template-columns: 1fr 1fr;
-       grid-column-start:1;
-       grid-column-end: 1;
-       margin-top: 150px;
-       grid-column-gap: 100px;
-`;
-const CardItemStyled=styled.div`
-    grid-column-start:1;
-    width: 360px;
-    min-width: 260px;
-    min-height: 400px;
-    height: 513px;
-    border-radius: 10px;
-    filter: drop-shadow(0px 25px 27.5px rgba(0,0,0,0.1));
-    background-color: #ffffff;
-    margin-right: 45px;
-    margin-bottom: 80px;
-     display: inline-block;
-     @media ${device.laptop} { 
-         width: 260px;
-          height: 400px;
-    } 
-    @media ${device.laptopL} { 
-          width: 360px;
-          height: 513px;
-    }@media ${device.desktop} { 
-          width: 360px;
-          height: 513px;
-    }
-`;
-const ImageCardStyled=styled.div`
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: #e1e1e1;
-     @media ${device.laptop} { 
-        height : 200px;
-    }
-    @media ${device.laptopL} { 
-          height: 50%;
-    }@media ${device.desktop} { 
-          height:50%;
-    }
-`;
-const TitleHolderCardStyled=styled.div`
-    display:flex;
-    align-items:center;   
-`;
-const TitleCardItemStyled=styled.p`
-    font-size: 22px;
-    color: #293039;
-    font-family: "Montserrat";
-    font-weight: 500;
-     padding:2px 30px
-`;
-const AuthorHolderCardStyled=styled.div`
-    display:flex;
-    align-items:center;
-`;
-const AuthorCardStyled=styled.div`
-    font-size: 14px;
-    color: #94a1ac;
-    font-family: "Montserrat";
-    font-weight: 400;
-     padding:0 30px
-`;
-const DescriptionHolderCardStyled=styled.div`
-    display:flex;
-    align-items:center;
-     @media ${device.laptopL} { 
-          margin-top:10px
-    }@media ${device.desktop} { 
-         margin-top:10px
+export default (theme)=>({
+    ContainerContent:{
+        with:'100%',
+        display: 'grid',
+        minWidth: '1280px',
+        gridTemplateColumns: '10% auto 10%',
+        background: '#fff',
+    },
+    ContentHolder:({
+        gridColumnStart:2,
+        display: 'grid',
+        gridTemplateColumns: '2fr  1fr' ,
+    }),
+    CardHolderStyled:({
+        display:'grid',
+        gridTemplateColumns:'1fr 1fr',
+        gridColumnStart:1,
+        gridColumnEnd: 1,
+        marginTop: '150px',
+        gridColumnGap: '65px',
+        gridRowGap:'80px'
+    }),
+    CardItemStyled:({
+        gridColumnStart:1,
+        width: '360px',
+        minWidth: '260px',
+        minHeight: '400px',
+        height: '513px',
+        borderRadius: '10px',
+        boxShadow:  '5px 5px 20px rgba(0, 0, 0, 0.5)',
+        backgroundColor: '#ffffff',
+        display: 'inline-block',
+        [theme.breakpoints.down('lg')]: {
+            width: '260px',
+            height: '400px',
 
-    }
-  
-`;
-const DescriptionCardStyled=styled.p`
-     width: 300px;
-    height: 100px;
-    font-size: 16px;
-    color: #4e5c66;
-    font-family: "Montserrat";
-    font-weight: 400;
-     padding:0 30px;
-     overflow: hidden;
-`;
+        },
+    }),
+    ImageCardStyled:({
+        width: '100%',
+        height: '100%',
+        borderTopLeftRadius: '10px',
+        borderTopRightRadius: '10px',
+        backgroundColor: '#e1e1e1',
+        [theme.breakpoints.up('xs')]: {
+            height : '200px',
+            width:'100%',
+        },
+        [theme.breakpoints.up('xl')]: {
+            height: '50%',
+
+        },
+        [theme.breakpoints.up('lg')]: {
+            height: '50%',
+
+        },
+    }),
+    TitleHolderCardStyled:({
+        display:'flex',
+        alignItems:'center',
+    }),
+    TitleCardItemStyled:({
+        fontSize: '22px',
+        color: '#293039',
+        fontFamily: "Montserrat",
+        fontWeight: '500',
+        padding:'2px 13px',
+        [theme.breakpoints.down('lg')]: {
+            fontSize: '20px',
+
+        },
+    }),
+    AuthorHolderCardStyled:({
+        display:'flex',
+        alignItems:'center',
+    }),
+    AuthorCardStyled:({
+        fontSize: '14px',
+        color: '#94a1ac',
+        fontFamily: "Montserrat",
+        fontWeight: '500',
+        padding:'0px 13px'
+    }),
+    DescriptionHolderCardStyled:({
+        display:'flex',
+        alignItems:'center',
+        [theme.breakpoints.up('xs')]: {
+            width: '100%',
+            height: '100px',
+        },
+        [theme.breakpoints.up('xl')]: {
+            marginTop:'20px'
+
+        },
+        [theme.breakpoints.up('lg')]: {
+            marginTop:'20px'
+
+        },
+    }),
+    DescriptionCardStyled:({
+        width: '300px',
+        height: '112px',
+        fontSize: '16px',
+        color: '#4e5c66',
+        fontFamily: "Montserrat",
+        fontWeight: '400',
+        padding:'0 15px',
+        overflow: 'hidden',
+    })
+});
 
 
-
-
-
-export {
-    ContainerContent,
-    ContentHolder,
-    CardItemStyled,
-    ImageCardStyled,
-    TitleHolderCardStyled,
-    TitleCardItemStyled,
-    AuthorHolderCardStyled,
-    AuthorCardStyled,
-    DescriptionHolderCardStyled,
-    DescriptionCardStyled,
-    CardHolderStyled,
-}
