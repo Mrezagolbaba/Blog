@@ -44,13 +44,13 @@ function* getArticle () {
     }
 }
 
-function* getArticleSingle () {
+function* getArticleSingle (action) {
     const slug = yield select((state)=>{
         return state.SingleArticleReducer.slug
     });
     if(slug){
         try {
-            const receiveArticleSingle = yield call[fetchArticleSingle(slug)] ;
+            const receiveArticleSingle = yield call(fetchArticleSingle,action.slug) ;
             yield put(getArticleSuccessSingle(receiveArticleSingle));
         } catch (err) {
             yield put(getArticleFailureSingle());
