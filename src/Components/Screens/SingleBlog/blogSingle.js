@@ -6,17 +6,13 @@ import ContentSingleBlog from "./ContentSingleBlog";
 
 export default class SingleBlog extends Component{
 
-    componentDidMount() {
-        // const {index} = this.props.location.state;
-        // console.log('Props Location',index)
-    }
-
     render(){
+        console.log('Props Location',this.props.match.params.slug)
         const {index} = this.props.location.state;
         return (
             <div>
                 <Header/>
-                <ContentSingleBlog  index={index} />
+                <ContentSingleBlog  index={index} slug={this.props.match.params.slug} />
                 <Footer/>
             </div>
         );
